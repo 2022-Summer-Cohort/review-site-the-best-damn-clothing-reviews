@@ -2,7 +2,7 @@
     /*font & color variables, etc and such will go here*/
 }
 .container{
-    background-color: aqua;
+    background-color: white;
 }
 header{
     background-color: aquamarine;
@@ -18,10 +18,15 @@ nav ul li{
     list-style-type: none;
 }
 .categoryGrid{
-    background-color: beige;
+    /* background-color: beige; */
 }
 .categoryGrid ul li{
     background-color: aqua;
     list-style: none;
 
+}
+footer{
+    background-color: aquamarine;
+    padding-top: 1em;
+    padding-bottom: 1em;
 }
