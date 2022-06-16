@@ -23,7 +23,8 @@ nav ul li{
 .categoryGrid ul li{
     background-color: aqua;
     list-style: none;
-
+    background: url("http://www.fillmurray.com/300/400");
+    
 }
 footer{
     background-color: aquamarine;
