@@ -1,0 +1,18 @@
+*{
+    /*font & color variables, etc and such will go here*/
+}
+.container{
+    background-color: aqua;
+}
+header{
+    background-color: aquamarine;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+nav{
+    background-color: rgb(82, 230, 250);
+    border-style: solid none;
+}
+
+nav ul li{
+    background-color: aliceblue;
+}

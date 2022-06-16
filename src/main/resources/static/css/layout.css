@@ -1,0 +1,18 @@
+.container{
+    width: 100%;
+    max-width: 1000px;
+    margin: auto;
+    height: 100vh;
+}
+header h1{
+    text-align: center;
+}
+nav ul{
+    display: flex;
+    justify-content: space-around;
+    padding-top: 1em;
+    padding-bottom: 1em;
+}
+.categoryGrid{
+    
+}
