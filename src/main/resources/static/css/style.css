@@ -23,11 +23,22 @@ nav ul li{
 .categoryGrid ul li{
     background-color: aqua;
     list-style: none;
-    background: url("http://www.fillmurray.com/300/400");
+    /* background: url("http://www.fillmurray.com/300/400"); */
+    background: url('https://fakeimg.pl/300x400');
+
     
 }
 footer{
     background-color: aquamarine;
     padding-top: 1em;
     padding-bottom: 1em;
+}
+
+.companyInfo{
+    display: flex;
+    flex-direction: column;
+    background-color: red;
+    padding: 1rem;
+    min-width: 300px;
+    
 }

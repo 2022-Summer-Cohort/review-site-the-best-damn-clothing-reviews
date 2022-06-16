@@ -39,3 +39,15 @@ main h2{
 footer{
     text-align: center;
 }
+
+.reviewPage{
+    display: flex;
+    /* flex-wrap: wrap; */
+    /* flex-direction: row; */
+}
+.reviewBox{
+    display: flex;
+    padding: 1rem 2rem 2rem 2rem;
+    /* width: 50%; */
+}
+
