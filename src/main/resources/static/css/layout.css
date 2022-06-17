@@ -50,4 +50,20 @@ footer{
     padding: 1rem 2rem 2rem 2rem;
     /* width: 50%; */
 }
+.logo{
+    max-width: 300px;
+    width: 100%;
+
+}
+.logogrid ul {
+    display: flex;
+    justify-content: space-evenly;
+    gap: 1em;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    width: 90%;
+    flex-wrap: wrap;
+    list-style: none;
+
+}
 
