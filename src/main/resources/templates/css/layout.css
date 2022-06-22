@@ -1,0 +1,69 @@
+.container{
+    width: 100%;
+    /* max-width: 1000px; */
+    margin: auto;
+    height: 100%;
+}
+header h1{
+    text-align: center;
+}
+nav ul{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding-top: 1em;
+    padding-bottom: 1em;
+}
+main h2{
+    text-align: center;
+}
+.categoryGrid{
+    width: 100%;
+    margin: 0px auto;
+}
+.categoryGrid ul{
+    display: flex;
+    justify-content: space-evenly;
+    gap: 1em;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    width: 90%;
+    flex-wrap: wrap;
+}
+.categoryGrid ul li{
+    width: 300px;
+    height: 400px;
+    text-align: center;
+    line-height: 50vh;
+}
+footer{
+    text-align: center;
+}
+
+.reviewPage{
+    display: flex;
+    /* flex-wrap: wrap; */
+    /* flex-direction: row; */
+}
+.reviewBox{
+    display: flex;
+    padding: 1rem 2rem 2rem 2rem;
+    /* width: 50%; */
+}
+.logo{
+    max-width: 300px;
+    width: 100%;
+
+}
+.logogrid ul {
+    display: flex;
+    justify-content: space-evenly;
+    gap: 1em;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    width: 90%;
+    flex-wrap: wrap;
+    list-style: none;
+
+}
+

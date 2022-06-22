@@ -3,6 +3,9 @@ package org.wecancodeit.reviews.model;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
+import java.util.Arrays;
+import java.util.Collection;
 
 @Entity
 public class Hashtag {
@@ -10,10 +13,12 @@ public class Hashtag {
     @GeneratedValue
     private long id;
     private String name;
+    @ManyToMany (mappedBy="hashtags")
+    private Collection<Retailer> retailers;
 
-    public Hashtag(long id, String name) {
-        this.id = id;
+    public Hashtag(String name, Retailer...retailers) {
         this.name = name;
+        this.retailers = Arrays.asList(retailers);
     }
 
     public Hashtag(){

@@ -21,6 +21,10 @@ public class CategoryController {
         model.addAttribute("Category",categoryRepo.findById(id).get());
         return "category";
     }
-
+    @RequestMapping("/")
+    public String allCategories(Model model){
+        model.addAttribute("categories", categoryRepo.findAll());
+        return "categories";
+    }
 
 }

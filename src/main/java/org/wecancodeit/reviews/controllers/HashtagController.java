@@ -14,11 +14,11 @@ public class HashtagController {
     public HashtagController(HashtagRepository hashtagRepo) {
         this.hashtagRepo = hashtagRepo;
     }
-@RequestMapping("hashtags/{id}")
-    public String showHashtag(Model model, @PathVariable long id){
-        model.addAttribute("Hashtag",hashtagRepo.findById(id).get());
-        return "hashtag";
-}
+    @RequestMapping("hashtags/{id}")
+        public String showHashtag(Model model, @PathVariable long id){
+            model.addAttribute("Hashtag",hashtagRepo.findById(id).get());
+            return "hashtag";
+    }
 
 
 }
