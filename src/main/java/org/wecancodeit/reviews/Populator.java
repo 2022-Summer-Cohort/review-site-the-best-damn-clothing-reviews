@@ -23,13 +23,18 @@ public class Populator implements CommandLineRunner {
     @Override
     public void run(String...args) throws Exception{
 
+        // HASHTAGS
         Hashtag sexy = new Hashtag("#sexy");
         hashtagRepo.save(sexy);
         hashtagRepo.save(new Hashtag("#fresh"));
 
+        // CATEGORIES
         Category shoes = new Category("shoes");
+        Category shirts = new Category("shirts");
         categoryRepo.save(shoes);
+        categoryRepo.save(shirts);
 
+        // RETAILERS
         Retailer gap = new Retailer("gap", "shoes");
         retailerRepo.save(gap);
 

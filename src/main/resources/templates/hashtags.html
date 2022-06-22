@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -23,27 +23,14 @@
         </nav>
 
         <main>
-            <h2>Hashtags</h2>
+            <h2>Hashtags TEST</h2>
             <section class="hashtagsGrid">
                 <ul>
-                    <li><a href="onlineshopping.html">#onlineshopping</a> 
+                    <li th:each="hashtag: ${hashtags}">
+                        <a  th:href="'/hashtags/'+${hashtag.id}"
+                            th:text="${hashtag.name}">zsdfgfgdsgd
+                        </a>
                     </li>
-                    <li>#womensfashion
-                    </li>
-                    <li>#fashionshoes</li>
-                    <li>#accessories</li>
-                    <li>#onlineshopping 
-                    </li>
-                    <li>#womensfashion
-                    </li>
-                    <li>#fashionshoes</li>
-                    <li>#accessories</li>
-                    <li>#onlineshopping 
-                    </li>
-                    <li>#womensfashion
-                    </li>
-                    <li>#fashionshoes</li>
-                    <li>#accessories</li>
                 </ul>
             </section>
         </main>
@@ -53,6 +40,5 @@
         </footer>
 
     </div>
-    
 </body>
 </html>

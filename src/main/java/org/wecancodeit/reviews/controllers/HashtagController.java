@@ -8,16 +8,22 @@ import org.wecancodeit.reviews.repos.HashtagRepository;
 
 @Controller
 public class HashtagController {
-
     private HashtagRepository hashtagRepo;
 
     public HashtagController(HashtagRepository hashtagRepo) {
         this.hashtagRepo = hashtagRepo;
     }
+
     @RequestMapping("hashtags/{id}")
-        public String showHashtag(Model model, @PathVariable long id){
-            model.addAttribute("Hashtag",hashtagRepo.findById(id).get());
-            return "hashtag";
+    public String showHashtag(Model model, @PathVariable long id){
+        model.addAttribute("Hashtag",hashtagRepo.findById(id).get());
+        return "hashtag";
+    }
+
+    @RequestMapping("hashtags")
+    public String allHashtags(Model model){
+        model.addAttribute("hashtags", hashtagRepo.findAll());
+        return "hashtags";
     }
 
 
