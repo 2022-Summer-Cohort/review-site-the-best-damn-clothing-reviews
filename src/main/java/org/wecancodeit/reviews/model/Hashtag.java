@@ -1,24 +1,23 @@
-package org.wecancoeit.reviews.model;
+package org.wecancodeit.reviews.model;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
 @Entity
-public class Retailer {
+public class Hashtag {
     @Id
     @GeneratedValue
     private long id;
     private String name;
-    private String category;
 
-    public Retailer(long id, String name, String category) {
+    public Hashtag(long id, String name) {
         this.id = id;
         this.name = name;
-        this.category = category;
     }
 
-    public Retailer(){
+    public Hashtag(){
+
     }
 
     public long getId() {
@@ -28,10 +27,4 @@ public class Retailer {
     public String getName() {
         return name;
     }
-
-    public String getCategory() {
-        return category;
-    }
-
-
 }
