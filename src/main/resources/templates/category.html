@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title th:text="${hashtag.name}">Hashtag</title>
+    <title th:text="${category.name}">Document</title>
     <link rel="stylesheet" href="/css/layout.css">
     <link rel="stylesheet" href="/css/style.css">
 </head>
@@ -15,22 +15,21 @@
 
         <header>
             <h1>The Best Damn Clothing Review</h1>
+
         </header>
         <div th:replace="fragments.html :: nav"></div>
 
+
         <main>
-            <h2 th:text="${hashtag.name}">#onlineshopping</h2>
+            <h2 th:text="${category.name}">Category</h2>
             <section class="logogrid">
                 <ul>
-                    <li th:each="retailer:${hashtag.retailers}">
+                    <li th:each="retailer:${category.retailers}">
 
-                    <a th:href="'/retailer/'+${retailer.id}">
-<!--                    <a href="retailerReviews.html">-->
-                        <img class="logo" src="https://1000logos.net/wp-content/uploads/2017/12/Victoria-Secret-Logo.png" alt="" srcset="">
-                    </a>
-
+                        <a th:href="'/retailer/'+${retailer.id}">
+                            <img class="logo" src="https://1000logos.net/wp-content/uploads/2017/12/Victoria-Secret-Logo.png" alt="" srcset="">
+                        </a>
                     </li>
-
                 </ul>
             </section>
         </main>
@@ -41,4 +40,5 @@
 
     </div>
 </body>
+
 </html>
