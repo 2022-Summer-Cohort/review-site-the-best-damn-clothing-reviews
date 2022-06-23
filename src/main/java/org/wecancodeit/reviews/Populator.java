@@ -35,7 +35,7 @@ public class Populator implements CommandLineRunner {
         categoryRepo.save(shirts);
 
         // RETAILERS
-        Retailer gap = new Retailer("gap", "shoes");
+        Retailer gap = new Retailer("gap", "shoes", sexy);
         retailerRepo.save(gap);
 
     }

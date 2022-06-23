@@ -16,7 +16,7 @@ public class HashtagController {
 
     @RequestMapping("hashtags/{id}")
     public String showHashtag(Model model, @PathVariable long id){
-        model.addAttribute("Hashtag",hashtagRepo.findById(id).get());
+        model.addAttribute("hashtag",hashtagRepo.findById(id).get());
         return "hashtag";
     }
 

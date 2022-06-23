@@ -10,11 +10,12 @@ import org.wecancodeit.reviews.repos.RetailerRepository;
 @RequestMapping("/retailers")
 public class RetailerController {
     private RetailerRepository retailerRepo;
+
     public RetailerController(RetailerRepository retailerRepo) {
         this.retailerRepo = retailerRepo;
     }
-    @RequestMapping("/{id}")
 
+    @RequestMapping("/{id}")
     public String showRetailer(Model model, @PathVariable long id){
         model.addAttribute("Retailer",retailerRepo.findById(id).get());
         return "retailer";
