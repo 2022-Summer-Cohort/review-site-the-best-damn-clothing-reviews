@@ -29,6 +29,10 @@ public class Hashtag {
         return id;
     }
 
+    public Collection<Retailer> getRetailers() {
+        return retailers;
+    }
+
     public String getName() {
         return name;
     }

@@ -22,11 +22,15 @@
             <h2 th:text="${hashtag.name}">#onlineshopping</h2>
             <section class="logogrid">
                 <ul>
-                    <a href="retailerReviews.html">
-                        <li>
-                            <img class="logo" src="https://1000logos.net/wp-content/uploads/2017/12/Victoria-Secret-Logo.png" alt="" srcset="">
-                        </li>
+                    <li th:each="retailer:${hashtag.retailers}">
+
+                    <a th:href="'/retailer/'+${retailer.id}">
+<!--                    <a href="retailerReviews.html">-->
+                        <img class="logo" src="https://1000logos.net/wp-content/uploads/2017/12/Victoria-Secret-Logo.png" alt="" srcset="">
                     </a>
+
+                    </li>
+
                 </ul>
             </section>
         </main>
