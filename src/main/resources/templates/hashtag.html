@@ -19,20 +19,13 @@
         <div th:replace="fragments.html :: nav"></div>
 
         <main>
-            <h2>#onlineshopping</h2>
+            <h2 th:text="${hashtag.name}">#onlineshopping</h2>
             <section class="logogrid">
                 <ul>
-                    <a href="retailerReviews.html"><li><img class="logo" src="https://1000logos.net/wp-content/uploads/2017/12/Victoria-Secret-Logo.png" alt=""
-                        srcset=""></li>
-                    </a>
-                    <a href="retailerReviews.html"><li><img class="logo" src="https://1000logos.net/wp-content/uploads/2017/12/Victoria-Secret-Logo.png" alt=""
-                        srcset=""></li>
-                    </a>
-                    <a href="retailerReviews.html"><li><img class="logo" src="https://1000logos.net/wp-content/uploads/2017/12/Victoria-Secret-Logo.png" alt=""
-                        srcset=""></li>
-                    </a>
-                    <a href="retailerReviews.html"><li><img class="logo" src="https://1000logos.net/wp-content/uploads/2017/12/Victoria-Secret-Logo.png" alt=""
-                        srcset=""></li>
+                    <a href="retailerReviews.html">
+                        <li>
+                            <img class="logo" src="https://1000logos.net/wp-content/uploads/2017/12/Victoria-Secret-Logo.png" alt="" srcset="">
+                        </li>
                     </a>
                 </ul>
             </section>
@@ -44,5 +37,4 @@
 
     </div>
 </body>
-
 </html>
