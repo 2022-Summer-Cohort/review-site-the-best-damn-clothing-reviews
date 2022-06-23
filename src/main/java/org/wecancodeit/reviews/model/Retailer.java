@@ -14,16 +14,22 @@ public class Retailer {
     @GeneratedValue
     private long id;
     private String name;
+    private String website;
     @ManyToMany
     private Collection<Category> categories;
     @ManyToMany
     private Collection<Hashtag> hashtags;
 
-    public Retailer(String name, Category category, Hashtag...hashtags) {
+    public String getWebsite() {
+        return website;
+    }
+
+    public Retailer(String name, String website, Category category, Hashtag...hashtags) {
         this.name = name;
         this.categories = new ArrayList<Category>();
         this.categories.add(category);
         this.hashtags = Arrays.asList(hashtags);
+        this.website = website;
     }
 
     public Retailer(){
@@ -32,6 +38,7 @@ public class Retailer {
     public long getId() {
         return id;
     }
+
 
     public String getName() {
         return name;

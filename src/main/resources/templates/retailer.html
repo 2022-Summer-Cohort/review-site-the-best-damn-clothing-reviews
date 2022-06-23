@@ -1,13 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
 
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <link rel="stylesheet" href="css/layout.css">
-  <link rel="stylesheet" href="css/style.css">
+  <title th:text="${retailer.name}">Place Holder</title>
+  <link rel="stylesheet" href="/css/layout.css">
+  <link rel="stylesheet" href="/css/style.css">
 </head>
 
 <body>
@@ -25,17 +25,16 @@
     </nav>
 
     <main>
-      <h2>Store Name</h2>
+      <h2 th:text="${retailer.name}">Place Holder</h2>
       <div class="reviewPage">
         <section class="companyInfo">
           <h2>Company Logo</h2>
-          <h3>Website</h3>
+          <h3 th:href="${retailer.website}"th:text="${retailer.website}">Website</h3>
           <h3>Overall Rating</h3>
           <h3>Hashtags</h3>
           <ul>
-            <li>hastag1</li>
-            <li>hastag2</li>
-            <li>hastag3</li>
+            <li th:each="hashtag: ${retailer.hashtags}">hashtag1</li>
+
           </ul>
 
 

@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.wecancodeit.reviews.model.Hashtag;
 import org.wecancodeit.reviews.repos.RetailerRepository;
 @Controller
-@RequestMapping("/retailers")
+@RequestMapping("/retailer")
 public class RetailerController {
     private RetailerRepository retailerRepo;
 
@@ -17,7 +17,7 @@ public class RetailerController {
 
     @RequestMapping("/{id}")
     public String showRetailer(Model model, @PathVariable long id){
-        model.addAttribute("Retailer",retailerRepo.findById(id).get());
+        model.addAttribute("retailer",retailerRepo.findById(id).get());
         return "retailer";
     }
 
