@@ -34,6 +34,17 @@ public class Retailer {
         this.website = website;
     }
 
+    public Retailer(String name, String website, String imgUrl, Category[] categories, Hashtag...hashtags) {
+        this.name = name;
+        this.categories = new ArrayList<Category>();
+        this.imgUrl = imgUrl;
+        this.categories=Arrays.asList(categories);
+        this.hashtags = Arrays.asList(hashtags);
+        this.website = website;
+    }
+
+
+
     public Retailer(){
     }
 
@@ -58,5 +69,9 @@ public class Retailer {
     }
     public void addCategory(Category category){
         categories.add(category);
+    }
+
+    public void addHashtag(Hashtag hashtag) {
+        hashtags.add(hashtag);
     }
 }
