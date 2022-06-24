@@ -15,6 +15,7 @@ public class Retailer {
     private long id;
     private String name;
     private String website;
+    private String imgUrl;
     @ManyToMany
     private Collection<Category> categories;
     @ManyToMany
@@ -24,9 +25,10 @@ public class Retailer {
         return website;
     }
 
-    public Retailer(String name, String website, Category category, Hashtag...hashtags) {
+    public Retailer(String name, String website, String imgUrl, Category category, Hashtag...hashtags) {
         this.name = name;
         this.categories = new ArrayList<Category>();
+        this.imgUrl = imgUrl;
         this.categories.add(category);
         this.hashtags = Arrays.asList(hashtags);
         this.website = website;
@@ -35,6 +37,9 @@ public class Retailer {
     public Retailer(){
     }
 
+    public String getImgUrl() {
+        return imgUrl;
+    }
     public long getId() {
         return id;
     }

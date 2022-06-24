@@ -28,10 +28,11 @@
       <h2 th:text="${retailer.name}">Place Holder</h2>
       <div class="reviewPage">
         <section class="companyInfo">
-          <h2>Company Logo</h2>
+          <img th:src="${retailer.imgUrl}">
+          <h2 th:text="${retailer.name}">Company Logo</h2>
           <h3 th:href="${retailer.website}"th:text="${retailer.website}">Website</h3>
-          <h3>Overall Rating</h3>
-          <h3>Hashtags</h3>
+          <h3>Overall Rating: 5/5 *****</h3>
+          <h3>Related Hashtags:</h3>
           <ul>
             <li th:each="hashtag: ${retailer.hashtags}">hashtag1</li>
 
@@ -71,7 +72,6 @@
 
               </p>
             </li>
-
           </ul>
 
         </div>

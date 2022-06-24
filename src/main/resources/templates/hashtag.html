@@ -26,7 +26,7 @@
 
                     <a th:href="'/retailer/'+${retailer.id}">
 <!--                    <a href="retailer.html">-->
-                        <img class="logo" src="https://1000logos.net/wp-content/uploads/2017/12/Victoria-Secret-Logo.png" alt="" srcset="">
+                        <img th:src="${retailer.imgUrl}">
                     </a>
 
                     </li>
