@@ -35,9 +35,30 @@ public class Populator implements CommandLineRunner {
         categoryRepo.save(shirts);
 
         // RETAILERS
-        Retailer gap = new Retailer("gap","gap.com", "/images/Gap.png", shoes, sexy);
-        gap.addCategory(shirts);
-        retailerRepo.save(gap);
+        Retailer shein = new Retailer("Shein","shein.com", "/images/shein-logo.jpg", shoes, sexy);
+        retailerRepo.save(shein);
+
+        Retailer blueNile = new Retailer("Blue Nile","bluenile.com", "/images/blueNileLogo.png", shoes, sexy);
+        retailerRepo.save(blueNile);
+
+        Retailer cision = new Retailer("cision","cision.com", "/images/Cision.png", shoes, sexy);
+        retailerRepo.save(cision);
+
+        Retailer dsw = new Retailer("dsw","dsw.com", "/images/DSW.png", shoes, sexy);
+        retailerRepo.save(dsw);
+
+        Retailer kohls = new Retailer("kohls","kohls.com", "/images/Kohls.jpg", shoes, sexy);
+        retailerRepo.save(kohls);
+
+        Retailer fashionNova = new Retailer("fashion Nova","fashionNova.com", "/images/fashionnova.jpg", shoes, sexy);
+        retailerRepo.save(fashionNova);
+
+        Retailer shoeDazzle = new Retailer("shoe Dazzle","shoeDazzle.com", "/images/shoedazzle.jpg", shoes, sexy);
+        retailerRepo.save(shoeDazzle);
+
+        Retailer nike = new Retailer("nike","nike.com", "/images/nike.jpg", shoes, sexy);
+        retailerRepo.save(nike);
+
 
     }
 }
