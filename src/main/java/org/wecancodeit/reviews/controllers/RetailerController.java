@@ -14,7 +14,7 @@ import org.wecancodeit.reviews.repos.RetailerRepository;
 import java.util.Optional;
 
 @Controller
-@RequestMapping("/retailer")
+
 public class RetailerController {
     private RetailerRepository retailerRepo;
     private HashtagRepository hashtagRepo;
@@ -24,7 +24,7 @@ public class RetailerController {
         this.hashtagRepo = hashtagRepo;
     }
 
-    @RequestMapping("/{id}")
+    @RequestMapping("/retailer/{id}")
     public String showRetailer(Model model, @PathVariable long id) {
         model.addAttribute("retailer", retailerRepo.findById(id).get());
         return "retailer";
@@ -32,7 +32,7 @@ public class RetailerController {
 
     }
 
-    @PostMapping("/{id}/addHashtag")
+    @PostMapping("/retailer/{id}/addHashtag")
     public String addHashtagToRetailer(@PathVariable Long id, @RequestParam String hashtag) {
         Retailer retailer = retailerRepo.findById(id).get();
         Optional<Hashtag> hashtagOptional = hashtagRepo.findByNameIgnoreCase(hashtag);

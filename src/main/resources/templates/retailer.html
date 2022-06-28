@@ -15,14 +15,9 @@
 
     <header>
       <h1>The Best Damn Clothing Review</h1>
-
     </header>
-    <nav class="nav">
-      <ul>
-        <li><a href="categories.html"> Categories</a></li>
-        <li><a href="hashtags.html"> Hashtags</a></li>
-      </ul>
-    </nav>
+    <div th:replace="fragments.html :: nav"></div>
+
 
     <main>
       <h2 th:text="${retailer.name}">Place Holder</h2>
@@ -35,11 +30,10 @@
           <h3>Related Hashtags:</h3>
           <ul>
             <li th:each="hashtag: ${retailer.hashtags}">
-              <a th:href="'/hashtags/'+ ${id}"  th:text="${hashtag.name}">hashtag1
+              <a th:href="'/hashtags/'+ ${hashtag.id}" th:text="${hashtag.name}">
+                hashtag1
               </a>
             </li>
-
-
           </ul>
 
 
