@@ -34,7 +34,11 @@
           <h3>Overall Rating: 5/5 *****</h3>
           <h3>Related Hashtags:</h3>
           <ul>
-            <li th:each="hashtag: ${retailer.hashtags}">hashtag1</li>
+            <li th:each="hashtag: ${retailer.hashtags}">
+              <a th:href="'/hashtags/'+ ${id}"  th:text="${hashtag.name}">hashtag1
+              </a>
+            </li>
+
 
           </ul>
 
@@ -76,6 +80,13 @@
 
         </div>
       </div>
+      <section class="Forms">
+        <form th:action="'/retailer/' + ${retailer.id}+ '/addHashtag'" method="post">
+          <label for="hashtagID">Enter new hashtag:</label>
+          <input type="text" name="hashtag" id="hashtagID">
+          <input type="submit">
+        </form>
+      </section>
     </main>
 
     <footer>
