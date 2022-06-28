@@ -22,16 +22,17 @@
 
         <main>
             <h2 th:text="${category.name}">Category</h2>
+
             <section class="logogrid">
                 <ul>
                     <li th:each="retailer:${category.retailers}">
-
                         <a th:href="'/retailer/'+${retailer.id}">
-                            <img th:src="${retailer.imgUrl}">
+                            <img th:src="${retailer.imgUrl}" id="test">
                         </a>
                     </li>
                 </ul>
             </section>
+
         </main>
 
         <footer>

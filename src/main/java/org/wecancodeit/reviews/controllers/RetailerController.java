@@ -28,8 +28,6 @@ public class RetailerController {
     public String showRetailer(Model model, @PathVariable long id) {
         model.addAttribute("retailer", retailerRepo.findById(id).get());
         return "retailer";
-
-
     }
 
     @PostMapping("/retailer/{id}/addHashtag")

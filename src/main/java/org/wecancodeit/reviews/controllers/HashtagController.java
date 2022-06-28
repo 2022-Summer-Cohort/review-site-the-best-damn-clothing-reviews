@@ -25,6 +25,4 @@ public class HashtagController {
         model.addAttribute("hashtags", hashtagRepo.findAll());
         return "hashtags";
     }
-
-
 }

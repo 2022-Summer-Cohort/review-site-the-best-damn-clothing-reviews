@@ -75,6 +75,12 @@ footer{
     width: 90%;
     flex-wrap: wrap;
     list-style: none;
-
 }
 
+.logogrid ul li a img{
+    object-fit: fill;
+    /*object-fit: fill;*/
+    width: 200px;
+    height: 200px;
+
+}
