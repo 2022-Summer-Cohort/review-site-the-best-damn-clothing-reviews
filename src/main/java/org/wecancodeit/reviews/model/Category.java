@@ -14,12 +14,19 @@ public class Category {
     private String name;
     @ManyToMany(mappedBy = "categories")
     private Collection<Retailer> retailers;
+    private String imgUrl;
 
+    public Category(String name, String imgUrl) {
+        this.name = name;
+        this.imgUrl = imgUrl;
+    }
     public Category(String name) {
         this.name = name;
     }
 
+
     public Category(){    }
+
 
     public Collection<Retailer> getRetailers() {
         return retailers;

@@ -1,9 +1,6 @@
 package org.wecancodeit.reviews.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.ManyToMany;
+import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
@@ -16,10 +13,13 @@ public class Retailer {
     private String name;
     private String website;
     private String imgUrl;
+    private int retailerAverageRating;
     @ManyToMany
     private Collection<Category> categories;
     @ManyToMany
     private Collection<Hashtag> hashtags;
+    @OneToMany
+    private Collection<Review> reviews;
 
     public String getWebsite() {
         return website;
@@ -32,6 +32,7 @@ public class Retailer {
         this.categories.add(category);
         this.hashtags = Arrays.asList(hashtags);
         this.website = website;
+        this.reviews = new ArrayList<Review>();
     }
 
     public Retailer(String name, String website, String imgUrl, Category[] categories, Hashtag...hashtags) {
@@ -43,8 +44,6 @@ public class Retailer {
         this.website = website;
     }
 
-
-
     public Retailer(){
     }
 
@@ -55,7 +54,6 @@ public class Retailer {
         return id;
     }
 
-
     public String getName() {
         return name;
     }
@@ -63,15 +61,19 @@ public class Retailer {
     public Collection<Category> getCategories() {
         return categories;
     }
-
     public Collection<Hashtag> getHashtags() {
         return hashtags;
     }
+    public Collection<Review> getReviews() {
+        return reviews;
+    }
+
     public void addCategory(Category category){
         categories.add(category);
     }
-
     public void addHashtag(Hashtag hashtag) {
         hashtags.add(hashtag);
     }
+    public void addReview(Review review) {reviews.add(review);}
+
 }

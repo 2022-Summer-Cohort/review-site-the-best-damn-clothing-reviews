@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:review="http://www.w3.org/1999/xhtml">
 
 <head>
   <meta charset="UTF-8">
@@ -39,38 +40,19 @@
 
         <div class="reviewBox">
           <ul>
-            <li>
+            <li th:each="review: ${retailer.reviews}">
               <img src="https://fakeimg.pl/100x20" alt="" class="stars">
-              <p>Excepteur qui enim qui nostrud ea. Excepteur culpa sint voluptate veniam velit pariatur consequat
-                tempor
-                laborum eiusmod adipisicing mollit esse. Quis laborum labore elit culpa adipisicing ullamco id culpa
-                amet.
-                Deserunt anim non nulla dolore qui non veniam eiusmod nisi id non eu ad mollit.
-              </p>
+                <p th:text="${review.review}">
+                  Review
+                </p>
             </li>
-            <li>
-              <img src="https://fakeimg.pl/100x20" alt="" class="stars">
-              <p>Excepteur qui enim qui nostrud ea. Excepteur culpa sint voluptate veniam velit pariatur consequat
-                tempor
-                laborum eiusmod adipisicing mollit esse. Quis laborum labore elit culpa adipisicing ullamco id culpa
-                amet.
-                Deserunt anim non nulla dolore qui non veniam eiusmod nisi id non eu ad mollit.
-              </p>
-            </li>
-            <li>
-              <img src="https://fakeimg.pl/100x20" alt="" class="stars">
-              <p>Excepteur qui enim qui nostrud ea. Excepteur culpa sint voluptate veniam velit pariatur consequat
-                tempor
-                laborum eiusmod adipisicing mollit esse. Quis laborum labore elit culpa adipisicing ullamco id culpa
-                amet.
-                Deserunt anim non nulla dolore qui non veniam eiusmod nisi id non eu ad mollit.
-                <br><br>
 
-              </p>
+            <li>
+              <h1>TEST</h1>
             </li>
-          </ul>
-
+           </ul>
         </div>
+
       </div>
       <section class="Forms">
         <form th:action="'/retailer/' + ${retailer.id}+ '/addHashtag'" method="post">
