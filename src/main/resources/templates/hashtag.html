@@ -23,12 +23,9 @@
                     <li th:each="retailer:${hashtag.retailers}">
 
                     <a th:href="'/retailer/'+${retailer.id}">
-<!--                    <a href="retailer.html">-->
                         <img th:src="${retailer.imgUrl}">
                     </a>
-
                     </li>
-
                 </ul>
             </section>
         </main>

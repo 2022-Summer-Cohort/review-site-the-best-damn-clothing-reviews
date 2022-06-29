@@ -8,8 +8,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.wecancodeit.reviews.model.Hashtag;
 import org.wecancodeit.reviews.model.Retailer;
+import org.wecancodeit.reviews.model.Review;
 import org.wecancodeit.reviews.repos.HashtagRepository;
 import org.wecancodeit.reviews.repos.RetailerRepository;
+import org.wecancodeit.reviews.repos.ReviewRepository;
 
 import java.util.Optional;
 
@@ -18,10 +20,12 @@ import java.util.Optional;
 public class RetailerController {
     private RetailerRepository retailerRepo;
     private HashtagRepository hashtagRepo;
+    private ReviewRepository reviewRepo;
 
-    public RetailerController(RetailerRepository retailerRepo, HashtagRepository hashtagRepo) {
+    public RetailerController(RetailerRepository retailerRepo, HashtagRepository hashtagRepo, ReviewRepository reviewRepo) {
         this.retailerRepo = retailerRepo;
         this.hashtagRepo = hashtagRepo;
+        this.reviewRepo = reviewRepo;
     }
 
     @RequestMapping("/retailer/{id}")
@@ -47,4 +51,14 @@ public class RetailerController {
         retailerRepo.save(retailer);
         return "redirect:/retailer/" + id;
     }
+    @PostMapping("/retailer/{id}/addReview")
+    public String addReviewToRetailer(@PathVariable Long id, @RequestParam Integer rating, @RequestParam String review){
+        Retailer retailer = retailerRepo.findById(id).get();
+        Review newReview = new Review(review, rating, retailer);
+        reviewRepo.save(newReview);
+        retailer.addReview(newReview);
+        retailerRepo.save(retailer);
+        return "redirect:/retailer/" + id;
+    }
+
 }

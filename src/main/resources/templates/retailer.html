@@ -46,11 +46,23 @@
                   Review
                 </p>
             </li>
-
-            <li>
-              <h1>TEST</h1>
-            </li>
            </ul>
+          <form th:action="'/retailer/'+${retailer.id}+'/addReview'" method="post">
+            <label for="newReviewRating">Rating</label>
+            <select id="newReviewRating" name="rating">
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select>
+            <br>
+            <label for="newReviewContent">Enter new Review:</label>
+<!--            <input type="text" name="review" id="newReviewContent">-->
+            <textarea type="text" name="review" id="newReviewContent"
+                      rows="4" cols="50" placeholder="Article/content goes here"></textarea>
+            <input type="submit">
+          </form>
         </div>
 
       </div>
