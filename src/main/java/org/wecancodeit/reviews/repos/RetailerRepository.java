@@ -5,6 +5,5 @@ import org.wecancodeit.reviews.model.Retailer;
 
 public interface RetailerRepository extends CrudRepository<Retailer,Long> {
 //    Retailer findByHashtagsIgnoreCase(String hashtag);
-//
-//    Retailer findByCategoryIgnoreCase(String category);
+// findByCategoryIgnoreCase(String category);
 }

@@ -1,8 +1,8 @@
 .container{
-    width: 100%;
-    /* max-width: 1000px; */
-    margin: auto;
-    height: 100%;
+    /*width: 100%;*/
+    /*!* max-width: 1000px; *!*/
+    /*margin: auto;*/
+    /*height: 100%;*/
 }
 header h1{
     text-align: center;
@@ -84,3 +84,25 @@ footer{
     height: 200px;
 
 }
+
+.btn.btn-primary{
+    padding-top: 10px:
+}
+
+.reviewCol{
+    padding-top: 5px;
+    margin: 1rem;
+}
+.headerLogo{
+    justify-content: space-evenly;
+    text-align: center;
+    margin:auto;
+    padding: 1rem 0 1rem 0;
+
+}
+
+.nav.ul{
+    margin-bottom: 0px;
+}
+
+

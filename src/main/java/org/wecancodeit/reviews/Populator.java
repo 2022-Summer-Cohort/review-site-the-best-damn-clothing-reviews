@@ -28,79 +28,82 @@ public class Populator implements CommandLineRunner {
     @Override
     public void run(String...args) throws Exception{
 
-        // HASHTAGS
+        // GENERATE HASHTAGS
+        Hashtag fresh = new Hashtag("#fresh");
         Hashtag sexy = new Hashtag("#sexy");
-        hashtagRepo.save(sexy);
-        hashtagRepo.save(new Hashtag("#fresh"));
         Hashtag designer = new Hashtag("#designer");
-        hashtagRepo.save(designer);
         Hashtag fashion = new Hashtag("#fashionable");
-        hashtagRepo.save(fashion);
         Hashtag stylish = new Hashtag("#stylish");
-        hashtagRepo.save(stylish);
         Hashtag ootd = new Hashtag("#ootd");
+        Hashtag mwslm = new Hashtag("#myWifeStillLeftMe");
+        hashtagRepo.save(fresh);
+        hashtagRepo.save(sexy);
+        hashtagRepo.save(designer);
+        hashtagRepo.save(fashion);
+        hashtagRepo.save(stylish);
         hashtagRepo.save(ootd);
+        hashtagRepo.save(mwslm);
 
-        // CATEGORIES
-        Category shoes = new Category("shoes");
+        // GENERATE CATEGORIES
+        Category mens = new Category("mens clothing");
         Category womens = new Category("womens clothing");
+        Category shoes = new Category("shoes");
+        Category kids  = new Category("kids clothing");
+        Category jewelery = new Category("jewelery");
+        Category sportsWear = new Category("sportsWear");
         categoryRepo.save(shoes);
         categoryRepo.save(womens);
-        Category mens = new Category("mens clothing");
-        Category kids  = new Category("kids clothing");
         categoryRepo.save(mens);
         categoryRepo.save(kids);
-        Category jewelery = new Category("jewelery");
-        Category headWear = new Category("headWear");
         categoryRepo.save(jewelery);
-        categoryRepo.save(headWear);
-        Category sportsWear = new Category("sportsWear");
-        Category underWear = new Category("underWear");
         categoryRepo.save(sportsWear);
-        categoryRepo.save(underWear);
-        Category outDoors = new Category("outDoors");
-        Category purses = new Category("purses");
-        categoryRepo.save(outDoors);
-        categoryRepo.save(purses);
 
-        // RETAILERS
-        Retailer shein = new Retailer("Shein","shein.com", "/images/shein-logo.jpg", shoes, sexy);
-        shein.addCategory(womens);
+
+        // RETAILER CATEGORIES
+        Category[] cat1 = {womens,shoes};
+        Category[] cat2 = {shoes,kids};
+        Category[] cat3 = {jewelery};
+        Category[] cat4 = {mens, womens, shoes, kids, jewelery, sportsWear};
+        Category[] cat5 = {womens};
+        Category[] cat6 = {shoes, mens, womens};
+        Category[] cat7 = {shoes, sportsWear};
+
+        // GENERATE RETAILERS
+        Retailer shein = new Retailer("Shein","shein.com", "/images/shein-logo.jpg", womens, designer, sexy);
+        Retailer dsw = new Retailer("dsw","dsw.com", "/images/DSW.png",cat2, sexy, stylish, fashion);
+        Retailer blueNile = new Retailer("Blue Nile","bluenile.com", "/images/blueNileLogo.png", jewelery, sexy, stylish, mwslm);
+        Retailer kohls = new Retailer("kohls","kohls.com", "/images/Kohls.jpg", cat4, ootd);
+        Retailer fashionNova = new Retailer("fashion Nova","fashionNova.com", "/images/fashionnova.jpg", womens, ootd, designer);
+        Retailer shoeDazzle = new Retailer("shoe Dazzle","shoeDazzle.com", "/images/shoedazzle.jpg", cat6, stylish, fresh);
+        Retailer nike = new Retailer("nike","nike.com", "/images/nike.jpg", cat7, fresh, fashion);
+
+        shein.addCategory(shoes);
         retailerRepo.save(shein);
-        Retailer blueNile = new Retailer("Blue Nile","bluenile.com", "/images/blueNileLogo.png", shoes, sexy);
-        blueNile.addCategory(jewelery);
         retailerRepo.save(blueNile);
-        Category[] dswCategory={shoes,mens};
-        Retailer dsw = new Retailer("dsw","dsw.com", "/images/DSW.png",dswCategory, sexy,stylish);
-        //dsw.addCategory(purses);
         retailerRepo.save(dsw);
-        Retailer kohls = new Retailer("kohls","kohls.com", "/images/Kohls.jpg", shoes, sexy);
-        kohls.addCategory(womens);
-        kohls.addCategory(mens);
-        kohls.addCategory(kids);
-        kohls.addCategory(sportsWear);
         retailerRepo.save(kohls);
-        Retailer fashionNova = new Retailer("fashion Nova","fashionNova.com", "/images/fashionnova.jpg", shoes, sexy);
-        fashionNova.addCategory(womens);
         retailerRepo.save(fashionNova);
-        Retailer shoeDazzle = new Retailer("shoe Dazzle","shoeDazzle.com", "/images/shoedazzle.jpg", shoes, sexy);
         retailerRepo.save(shoeDazzle);
-        Retailer nike = new Retailer("nike","nike.com", "/images/nike.jpg", shoes, sexy);
-        nike.addCategory(sportsWear);
         retailerRepo.save(nike);
 
         // ADD REVIEWS
         // TODO: possibly change Review:@ManyToOne mapped by behaviour
-        Review review1 = new Review("This is a review", 5, shein);
-        Review review2 = new Review("This is a review 2", 2, shein);
-        Review review3 = new Review("This is a review 3", 1, shein);
+        Review review1 = new Review("At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium ", 5, shein);
+        Review review2 = new Review("At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium", 2, shein);
+        Review review3 = new Review("This is a review", 1, shein);
+        Review review4 = new Review("I bought a $2,599 necklace and my wife still left me.", 1, blueNile);
         shein.addReview(review1);
         shein.addReview(review2);
         shein.addReview(review3);
+        blueNile.addReview(review4);
+
         reviewRepo.save(review1);
         reviewRepo.save(review2);
         reviewRepo.save(review3);
+        reviewRepo.save(review4);
+
         retailerRepo.save(shein);
+        retailerRepo.save(blueNile);
 
     }
 
