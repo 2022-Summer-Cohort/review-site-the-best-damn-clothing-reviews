@@ -24,9 +24,7 @@ public class Category {
         this.name = name;
     }
 
-
     public Category(){    }
-
 
     public Collection<Retailer> getRetailers() {
         return retailers;
@@ -38,5 +36,10 @@ public class Category {
 
     public String getName() {
         return name;
+    }
+
+
+    public String getImgUrl() {
+        return imgUrl;
     }
 }

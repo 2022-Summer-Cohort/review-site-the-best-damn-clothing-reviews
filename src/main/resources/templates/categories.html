@@ -19,13 +19,25 @@
         <main>
             <h2 class="display-3">Categories</h2>
             <section class="categoryGrid">
-                <ul>
-                    <li th:each="category:${categories}">
-                        <a th:href="'/categories/'+${category.id}"
-                           th:text="${category.name}">Men's Clothing
+                <div class="row justify-content-md-center">
+                    <div th:each="category:${categories}" class="card m-2 mb-4 p-0" style="width: 18rem;">
+                        <a th:href="'/categories/'+${category.id}">
+                            <img class="card-img-top" th:src="${category.imgUrl}" th:alt="${category.name}">
+                            <div class="card-body">
+                                <p th:text="${category.name}" class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            </div>
                         </a>
-                    </li>
-                </ul>
+                    </div>
+                </div>
+
+<!--                <ul>-->
+<!--                    <li th:each="category:${categories}">-->
+<!--                        <a th:href="'/categories/'+${category.id}">-->
+<!--                            <img th:src="${category.imgUrl}">-->
+<!--                            <h3 class="image-text" th:text="${category.name}">Men's Clothing</h3>-->
+<!--                        </a>-->
+<!--                    </li>-->
+<!--                </ul>-->
             </section>
         </main>
 

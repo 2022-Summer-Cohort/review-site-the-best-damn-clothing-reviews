@@ -22,10 +22,9 @@
             <section class="logogrid">
                 <ul>
                     <li th:each="retailer:${hashtag.retailers}">
-
-                    <a th:href="'/retailer/'+${retailer.id}">
-                        <img th:src="${retailer.imgUrl}">
-                    </a>
+                        <a th:href="'/retailer/'+${retailer.id}">
+                            <img th:src="${retailer.imgUrl}">
+                        </a>
                     </li>
                 </ul>
             </section>

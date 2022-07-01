@@ -19,7 +19,7 @@
             <h2 class="display-3" >Retailers</h2>
             <section class="hashtagsGrid">
                 <ul>
-                    <li th:each="hashtag: ${hashtags}">
+                    <li class="h5" th:each="hashtag: ${hashtags}">
                         <a  th:href="'/hashtags/'+${hashtag.id}"
                             th:text="${hashtag.name}">zsdfgfgdsgd
                         </a>

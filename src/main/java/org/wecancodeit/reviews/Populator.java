@@ -45,12 +45,12 @@ public class Populator implements CommandLineRunner {
         hashtagRepo.save(mwslm);
 
         // GENERATE CATEGORIES
-        Category mens = new Category("mens clothing");
-        Category womens = new Category("womens clothing");
-        Category shoes = new Category("shoes");
-        Category kids  = new Category("kids clothing");
-        Category jewelery = new Category("jewelery");
-        Category sportsWear = new Category("sportsWear");
+        Category mens = new Category("mens clothing", "/images/categories/mens_clothing-2.jpg");
+        Category womens = new Category("womens clothing", "/images/categories/womens_clothing-2.jpg");
+        Category shoes = new Category("shoes", "/images/categories/shoes-2.jpg");
+        Category kids  = new Category("kids clothing", "/images/categories/kids_clothing-2.jpg");
+        Category jewelery = new Category("jewelery", "/images/categories/jewelry-2.jpg");
+        Category sportsWear = new Category("sportsWear", "/images/categories/sportswear-2.jpg");
         categoryRepo.save(shoes);
         categoryRepo.save(womens);
         categoryRepo.save(mens);

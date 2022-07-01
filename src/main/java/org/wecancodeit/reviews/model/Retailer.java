@@ -56,7 +56,6 @@ public class Retailer {
         return name;
     }
 
-
     public Collection<Category> getCategories() {
         return categories;
     }

@@ -28,6 +28,14 @@ footer{
     padding-top: 1em;
     padding-bottom: 1em;
 }
+.image-text {
+    position: absolute;
+    left: 50%;
+    bottom: 0%;
+    margin-bottom: 9px;
+    transform: translate(-50%);
+    padding: 5px;
+}
 
 .companyInfo{
     display: flex;
@@ -67,4 +75,17 @@ footer{
 }
 li{
     list-style: none;
+}
+.card a{
+    text-decoration: none;
+    color: black;
+    text-align: center;
+}
+
+.card a:hover{
+    text-decoration: underline;
+}
+.card:hover{
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(0,0,0,.12), 0 4px 8px rgba(0,0,0,.06);
 }
