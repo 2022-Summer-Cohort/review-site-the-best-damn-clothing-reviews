@@ -13,7 +13,6 @@ public class Retailer {
     private String name;
     private String website;
     private String imgUrl;
-    private int retailerAverageRating;
     @ManyToMany
     private Collection<Category> categories;
     @ManyToMany
@@ -58,6 +57,7 @@ public class Retailer {
         return name;
     }
 
+
     public Collection<Category> getCategories() {
         return categories;
     }
@@ -78,4 +78,11 @@ public class Retailer {
 
 
 
+    public int avgRating(){
+        int toAvg = 0;
+        for (Review thisReview: reviews){
+            toAvg+=thisReview.getRating();
+        }
+        return toAvg/(reviews.size());
+    }
 }
