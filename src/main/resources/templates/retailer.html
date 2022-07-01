@@ -27,12 +27,13 @@
         <section class="companyInfo col border p-3 rounded">
           <img th:src="${retailer.imgUrl}">
 <!--          <h2 th:text="${retailer.name}">Company Logo</h2>-->
-        <div class="m-3">
+        <div class="m-3"><p>Website: </p>
           <a class="h4" th:href="'http://' + ${retailer.website}" target="blank"
               th:text="${retailer.website}">Website</a>
         </div>
-        <div class="m-3">
-            <h3>Overall Rating: 5/5 *****</h3>
+        <div class="m-3"><p>Overall Rating:</p>
+          <span th:with="avgRating=${retailer.avgRating()}" th:each="count : ${#numbers.sequence(0, 4)}"
+          th:text="${count < avgRating} ?'&starf;':'&star;'"></span>
         </div>
         <div class="m-3">
           <h3>Related Hashtags:</h3>

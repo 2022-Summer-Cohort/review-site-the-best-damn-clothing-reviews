@@ -17,7 +17,7 @@ public class Retailer {
     private Collection<Category> categories;
     @ManyToMany
     private Collection<Hashtag> hashtags;
-    @OneToMany
+    @OneToMany (mappedBy= "retailer")
     private Collection<Review> reviews;
 
     public String getWebsite() {
@@ -36,7 +36,6 @@ public class Retailer {
 
     public Retailer(String name, String website, String imgUrl, Category[] categories, Hashtag...hashtags) {
         this.name = name;
-        this.categories = new ArrayList<Category>();
         this.imgUrl = imgUrl;
         this.categories=Arrays.asList(categories);
         this.hashtags = Arrays.asList(hashtags);
@@ -75,8 +74,6 @@ public class Retailer {
         hashtags.add(hashtag);
     }
     public void addReview(Review review) {reviews.add(review);}
-
-
 
     public int avgRating(){
         int toAvg = 0;

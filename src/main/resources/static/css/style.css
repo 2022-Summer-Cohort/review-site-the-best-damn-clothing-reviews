@@ -63,4 +63,8 @@ footer{
 }
 .display-3{
     padding-top: 1rem;
+    text-transform: uppercase;
+}
+li{
+    list-style: none;
 }
