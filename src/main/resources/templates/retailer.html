@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:review="http://www.w3.org/1999/xhtml">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title th:text="${retailer.name}">Place Holder</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+  <link rel="stylesheet" href="/css/layout.css">
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <div class="container">
+
+    <div th:replace="fragments.html :: header"></div>
+    <div th:replace="fragments.html :: nav"></div>
+
+    <main>
+
+      <h2 class="display-3" th:text="${retailer.name}">Place Holder</h2>
+
+      <div class="reviewPage row">
+
+        <section class="companyInfo col border p-3 rounded">
+          <img th:src="${retailer.imgUrl}">
+<!--          <h2 th:text="${retailer.name}">Company Logo</h2>-->
+        <div class="m-3"><p>Website: </p>
+          <a class="h4" th:href="'http://' + ${retailer.website}" target="blank"
+              th:text="${retailer.website}">Website</a>
+        </div>
+        <div class="m-3"><p>Overall Rating:</p>
+          <span th:with="avgRating=${retailer.avgRating()}" th:each="count : ${#numbers.sequence(0, 4)}"
+          th:text="${count < avgRating} ?'&starf;':'&star;'"></span>
+        </div>
+        <div class="m-3">
+          <h3>Related Hashtags:</h3>
+          <ul>
+            <li th:each="hashtag: ${retailer.hashtags}">
+              <a th:href="'/hashtags/'+ ${hashtag.id}" th:text="${hashtag.name}">
+                hashtag1
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="m-3">
+          <form class="row" th:action="'/retailer/' + ${retailer.id}+ '/addHashtag'" method="post">
+            <div class="mb-3">
+              <label class="form-label" for="hashtagID">Enter new hashtag:</label>
+            </div>
+            <div class="mb-3 col-6">
+              <input class="form-control" type="text" name="hashtag" id="hashtagID">
+            </div>
+            <div class="mb-3">
+              <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+          </form>
+        </div>
+        </section>
+
+        <div class="reviewCol col border p-3 rounded">
+
+            <ul>
+              <li th:each="review: ${retailer.reviews}">
+                  <div class="stars">
+                      <span th:each="count : ${#numbers.sequence(0, 4)}"
+                         th:text="${count < review.rating} ?'&starf;':'&star;'"></span>
+<!--                      <p th:text="${review.rating}+'/5'">★★★★★</p>-->
+                  </div>
+                  <p th:text="${review.review}">
+                    Review
+                  </p>
+              </li>
+            </ul>
+
+           <form th:action="'/retailer/'+${retailer.id}+'/addReview'" method="post">
+
+             <div class="mb-3">
+              <label for="newReviewRating" class="form-label">Rating</label>
+              <select id="newReviewRating" name="rating" class="form-select" aria-label="Default select example">
+<!--              <option selected>Choose a rating</option>-->
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+              </select>
+             </div>
+
+             <div class="mb-3">
+              <label for="newReviewContent">Enter new Review:</label>
+              <textarea class="form-control" type="text" name="review" id="newReviewContent"
+                        rows="4" cols="50" placeholder="Article/content goes here"></textarea>
+             </div>
+
+             <div class="mb-3">
+               <button type="submit" class="btn btn-primary">Submit</button>
+             </div>
+
+           </form>
+
+        </div>
+
+      </div>
+
+    </main>
+
+    <div th:replace="fragments.html :: footer"></div>
+
+  </div>
+
+</body>
+
+</html>
